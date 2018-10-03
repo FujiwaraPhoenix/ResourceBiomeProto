@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Adapted from the Random Event Prototype
-//Whatever generates NPCs should assign the player with setTarget(gameobject player), and the player should have the "Player" tag
+//Whatever generates NPCs should assign the player with setTarget(gameobject player), and the player should have the "Player" tag and the Player layer. If that causes problems let me know, I can change it.
 //NPCs will destroy themselves when they run out of health. If enemies are going to be kept in lists, then I can change it so that it uses isAlive() instead, so whatever manages the lists can destroy it from there
 //Enemies that deal contact damage will deal it once per collision
 public class EnemyController : MonoBehaviour {
@@ -11,16 +11,21 @@ public class EnemyController : MonoBehaviour {
     Vector2 inputVector; //The direction it moves in
     Rigidbody2D rb; //The rigidbody
 
+    public ProjectileController shot;
+
     public float maxHealth = 30; //How much health the NPC should start with and regen up to, if NPCs can regen
     float health; //How much health the NPC has
     bool poisoned = false; //Whether or not the NPC is poisoned. Holdover from the last project, might be useful
     bool alive = true; //Whether the npc is dead and should be removed
 
     public bool hostile = false; //Whether or not the enemy chases the player. I might set it up so that this changes if the player attacks the npc
-    public bool shooty = false; //Whether or not the NPC has a ranged attack
     public int aggroRange = 5; //How close the player has to be for the enemy to chase them
     public int damage = 5; //How much damage the enemy does per collision
     public float speedMult = 2f; //Affects how fast the enemy moves
+
+    public bool shooty = false; //Whether or not the NPC has a ranged attack
+    public float shootCooldown = 2;
+    public float shotTimer = 0;
 
     public bool wanderer = true; //Whether or not the NPC will wander around when not near the player
     bool wandering = false; //Whether or not the NPC is wandering around
@@ -47,11 +52,24 @@ public class EnemyController : MonoBehaviour {
 
     void Update() {
 
-        if (Vector3.Distance(target.transform.position, transform.position) < aggroRange) // If the player is within range, chase it
+        if (hostile && Vector3.Distance(target.transform.position, transform.position) < aggroRange) // If the player is within range, chase it
         {
             wandering = false;
             wanderCooldown = Random.Range(wanderTimerMin, wanderTimerMax); //If the player goes out of aggro range, will wait before wandering around again
             inputVector = (target.transform.position - transform.position);
+            if(shooty) //If the NPC has a ranged attack, it will use it on a cooldown
+            {
+                if(shotTimer >= shootCooldown)
+                {
+                    shotTimer = 0;
+                    ProjectileController p = Instantiate(shot, transform.position + new Vector3(inputVector.x * .1f, inputVector.y * .1f, 0), Quaternion.identity);
+                    p.target(target.transform.position, damage);
+                }
+                else
+                {
+                    shotTimer += Time.deltaTime;
+                }
+            }
         }
         else if (wanderer)
         {
@@ -106,7 +124,7 @@ public class EnemyController : MonoBehaviour {
         {
             inputVector.Normalize();
         }
-        rb.velocity = inputVector * 2f;
+        rb.velocity = inputVector * speedMult;
     }
 
     public void setTarget(GameObject t) //Sets the player so the NPC knows how to chase it
