@@ -17,4 +17,6 @@ public class EdiblePlant : MonoBehaviour {
         Drunk,
         Hungry
     }
+
+    public possibleEffects pE;
 }
