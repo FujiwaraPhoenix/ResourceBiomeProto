@@ -14,13 +14,30 @@ public class BiomeGeneration : MonoBehaviour {
     public float amountOfAsset3;
 
     Vector3 spawnPosition;
-    bool worldPopulated = false;
+
+    public Material grassTexture;
+    public Material desertTexture;
+    public Material iceTexture;
 
     // Use this for initialization
     void Start () {
         //this will ensure that the biome has a randomly picked color upon activation
         this.GetComponent<SpriteRenderer>().material.color = Random.ColorHSV(0f, 1f, 0f, 1f, 0f, 1f);
-        //this for statement will populate the world accordingly with how mnay of a specific asset you want at randomized locations with 
+        float textureNumber = Random.Range(0, 3);
+        if(textureNumber > 0 && textureNumber < 1f)
+        {
+            GetComponent<SpriteRenderer>().material = grassTexture;
+        }
+        if (textureNumber > 1f && textureNumber < 2f)
+        {
+
+        }
+        if (textureNumber > 2f && textureNumber < 3f)
+        {
+
+        }
+
+        //these for statements will populate the world accordingly with how mnay of a specific asset you want at randomized locations with 
         //randomized size as well.
         for (int i = 0; i < amountOfAsset1; i++)
         {
