@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  tags:
+  - DesertTile
+  - GrassTile
+  - IceTile
   layers:
   - Default
   - TransparentFX
