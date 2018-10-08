@@ -5,6 +5,7 @@ using UnityEngine;
 public class EdiblePlant : MonoBehaviour {
     //Basic values: all plants have these.
     public int healthHealed, hungerRecovered;
+    public SpriteRenderer spr;
 
     public enum possibleEffects
     {
