@@ -54,7 +54,7 @@ public class BiomeGeneration : MonoBehaviour {
             {
                 spawnPosition = new Vector3(Random.Range(-0.65f, 0.65f), -1f, Random.Range(-0.65f, 0.65f));
                 GameObject biome = (GameObject)Instantiate(desertTerrainAsset1, transform.position, Quaternion.identity);
-                biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
+               // biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
                 biome.transform.SetParent(this.transform);
                 biome.transform.localPosition = spawnPosition;
 
@@ -63,7 +63,7 @@ public class BiomeGeneration : MonoBehaviour {
             {
                 spawnPosition = new Vector3(Random.Range(-0.65f, 0.65f), -1f, Random.Range(-0.65f, 0.65f));
                 GameObject biome = (GameObject)Instantiate(desertTerrainAsset2, transform.position, Quaternion.identity);
-                biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
+              //  biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
                 biome.transform.SetParent(this.transform);
                 biome.transform.localPosition = spawnPosition;
 
@@ -72,7 +72,7 @@ public class BiomeGeneration : MonoBehaviour {
             {
                 spawnPosition = new Vector3(Random.Range(-0.65f, 0.65f), -1f, Random.Range(-0.65f, 0.65f));
                 GameObject biome = (GameObject)Instantiate(desertTerrainAsset3, transform.position, Quaternion.identity);
-                biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
+               // biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
                 biome.transform.SetParent(this.transform);
                 biome.transform.localPosition = spawnPosition;
             }
@@ -91,7 +91,7 @@ public class BiomeGeneration : MonoBehaviour {
             {
                 spawnPosition = new Vector3(Random.Range(-0.65f, 0.65f), -1f, Random.Range(-0.65f, 0.65f));
                 GameObject biome = (GameObject)Instantiate(grassTerrainAsset1, transform.position, Quaternion.identity);
-                biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
+              //  biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
                 biome.transform.SetParent(this.transform);
                 biome.transform.localPosition = spawnPosition;
 
@@ -100,7 +100,7 @@ public class BiomeGeneration : MonoBehaviour {
             {
                 spawnPosition = new Vector3(Random.Range(-0.65f, 0.65f), -1f, Random.Range(-0.65f, 0.65f));
                 GameObject biome = (GameObject)Instantiate(grassTerrainAsset2, transform.position, Quaternion.identity);
-                biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
+             //   biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
                 biome.transform.SetParent(this.transform);
                 biome.transform.localPosition = spawnPosition;
 
@@ -109,7 +109,7 @@ public class BiomeGeneration : MonoBehaviour {
             {
                 spawnPosition = new Vector3(Random.Range(-0.65f, 0.65f), -1f, Random.Range(-0.65f, 0.65f));
                 GameObject biome = (GameObject)Instantiate(grassTerrainAsset3, transform.position, Quaternion.identity);
-                biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
+             //   biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
                 biome.transform.SetParent(this.transform);
                 biome.transform.localPosition = spawnPosition;
             }
@@ -128,7 +128,7 @@ public class BiomeGeneration : MonoBehaviour {
             {
                 spawnPosition = new Vector3(Random.Range(-0.65f, 0.65f), -1f, Random.Range(-0.65f, 0.65f));
                 GameObject biome = (GameObject)Instantiate(iceTerrainAsset1, transform.position, Quaternion.identity);
-                biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
+             //   biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
                 biome.transform.SetParent(this.transform);
                 biome.transform.localPosition = spawnPosition;
 
@@ -137,7 +137,7 @@ public class BiomeGeneration : MonoBehaviour {
             {
                 spawnPosition = new Vector3(Random.Range(-0.65f, 0.65f), -1f, Random.Range(-0.65f, 0.65f));
                 GameObject biome = (GameObject)Instantiate(iceTerrainAsset2, transform.position, Quaternion.identity);
-                biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
+              //  biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
                 biome.transform.SetParent(this.transform);
                 biome.transform.localPosition = spawnPosition;
 
@@ -146,7 +146,7 @@ public class BiomeGeneration : MonoBehaviour {
             {
                 spawnPosition = new Vector3(Random.Range(-0.65f, 0.65f), -1f, Random.Range(-0.65f, 0.65f));
                 GameObject biome = (GameObject)Instantiate(iceTerrainAsset3, transform.position, Quaternion.identity);
-                biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
+              //  biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
                 biome.transform.SetParent(this.transform);
                 biome.transform.localPosition = spawnPosition;
             }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,6 +28,12 @@ public class EverythingPlayer : MonoBehaviour {
     //Variables for food that you've eaten;
     //In order: N/A, poisoned, paralyzed, fast, slow, confused, drunk, hungry.
     public bool[] possibleStatuses = new bool[8];
+
+    internal void getHit(double damage)
+    {
+        throw new NotImplementedException();
+    }
+
     public float[] timeLeft = new float[8];
 
     public float poisonTickTimer;
@@ -54,6 +61,13 @@ public class EverythingPlayer : MonoBehaviour {
 
         movePlayer();
         statusDetails();
+
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+
+
         if (testing)
         {
             testFunctions();
@@ -337,4 +351,11 @@ public class EverythingPlayer : MonoBehaviour {
             consumptionPerAction = 1;
         }
     }
+
+    public void getHit(int damage)
+    {
+        health -= damage;
+        getDamage = true;
+    }
+
 }

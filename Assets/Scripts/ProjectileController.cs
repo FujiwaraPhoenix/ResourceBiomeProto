@@ -28,7 +28,8 @@ public class ProjectileController : MonoBehaviour {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 5, playerLayer);
         foreach (Collider2D c in colliders)
         {
-            //if hit player, damage them and destroy the game object
+            EverythingPlayer player = c.GetComponent<EverythingPlayer>();
+            player.getHit(damage);
         }
     }
 

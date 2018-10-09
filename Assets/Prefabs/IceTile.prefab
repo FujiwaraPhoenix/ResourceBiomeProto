@@ -11,6 +11,22 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1691378411304450}
   m_IsPrefabAsset: 1
+--- !u!1 &1102566895690700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4184145475471084}
+  - component: {fileID: 114536625492368514}
+  m_Layer: 0
+  m_Name: SpeciesGen (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1691378411304450
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,6 +45,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4184145475471084
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1102566895690700}
+  m_LocalRotation: {x: -0.6830127, y: 0.18301272, z: 0.18301274, w: 0.6830127}
+  m_LocalPosition: {x: -1.4953822, y: -0.00005340576, z: -0.8518959}
+  m_LocalScale: {x: 0.018181818, y: 0.018181821, z: 1.0000002}
+  m_Children: []
+  m_Father: {fileID: 4738479425112544}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 30}
 --- !u!4 &4738479425112544
 Transform:
   m_ObjectHideFlags: 1
@@ -36,9 +65,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1691378411304450}
   m_LocalRotation: {x: 0.68301284, y: -0.18301274, z: -0.18301277, w: 0.6830126}
-  m_LocalPosition: {x: 50, y: -39.7, z: 0}
+  m_LocalPosition: {x: 50, y: -39.7, z: 1}
   m_LocalScale: {x: 55, y: 1, z: 55}
-  m_Children: []
+  m_Children:
+  - {fileID: 4184145475471084}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 120, y: 89.99999, z: 89.99999}
@@ -107,12 +137,34 @@ MonoBehaviour:
     type: 2}
   grassTerrainAsset3: {fileID: 1824551863806728, guid: 534d5e1671685ff428c33a2fa426c05d,
     type: 2}
-  iceTerrainAsset1: {fileID: 1540317602395424, guid: bad05dcf1f349ab4aa992f572c8faf98,
+  iceTerrainAsset1: {fileID: 1539632200673602, guid: 69e57f47e11d4244b817291620eb9d17,
     type: 2}
-  iceTerrainAsset2: {fileID: 1540317602395424, guid: bad05dcf1f349ab4aa992f572c8faf98,
+  iceTerrainAsset2: {fileID: 1185193639102090, guid: 7851db6575b40c4448aeae1c9a397da4,
     type: 2}
-  iceTerrainAsset3: {fileID: 1540317602395424, guid: bad05dcf1f349ab4aa992f572c8faf98,
+  iceTerrainAsset3: {fileID: 1458306838350288, guid: a9178c841b722ac44b78a0fe4c675d44,
     type: 2}
   amountOfAsset1: 10
   amountOfAsset2: 10
   amountOfAsset3: 10
+--- !u!114 &114536625492368514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1102566895690700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e0dc991598dc04cbbfc8b93e1944a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseplant: {fileID: 114368275436524416, guid: 7c85fcff453047d4b9bad88aa68bf73e,
+    type: 2}
+  listLength: 10
+  spriteList:
+  - {fileID: 21300000, guid: 390560e8e70383c4e8b655dc3f721666, type: 3}
+  - {fileID: 21300000, guid: 54927b1c66c73744e8cfa385f0621b0d, type: 3}
+  - {fileID: 21300000, guid: d4b6b60bffbde134ba5f2c15aac0d692, type: 3}
+  - {fileID: 21300000, guid: ae9e6b6690cc3994594689ef0b447703, type: 3}
+  - {fileID: 21300000, guid: 641a1649777a36d43b0c836f96e3cffa, type: 3}
+  - {fileID: 21300000, guid: c07e3a3fdd9c9f44cb9152bf5b75acc6, type: 3}
+  - {fileID: 21300000, guid: 042f218b69fe7dc46ad0932928deb2ad, type: 3}

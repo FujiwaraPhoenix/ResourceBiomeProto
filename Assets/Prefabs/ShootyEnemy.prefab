@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4861499781875874}
   - component: {fileID: 212062442441715294}
   - component: {fileID: 61894880615944274}
-  - component: {fileID: 50879373933986106}
   - component: {fileID: 114674461572805524}
+  - component: {fileID: 50400330467120106}
   m_Layer: 0
   m_Name: ShootyEnemy
   m_TagString: Enemy
@@ -37,13 +37,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1112730389368650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.04, y: 1.17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -8.774154, y: -2.1146502, z: -1}
+  m_LocalScale: {x: 4.049908, y: 4.049908, z: 4.049908}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50879373933986106
+--- !u!50 &50400330467120106
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -102,7 +102,7 @@ MonoBehaviour:
   shot: {fileID: 114543821867366166, guid: 45ae41f3c8805494cbd786bfed8c97f3, type: 2}
   maxHealth: 30
   hostile: 1
-  aggroRange: 5
+  aggroRange: 15
   damage: 5
   speedMult: 2
   shooty: 1
@@ -113,7 +113,7 @@ MonoBehaviour:
   wanderTimerMin: 0.5
   wanderCooldownMax: 5
   wanderCooldownMin: 1
-  target: {fileID: 0}
+  target: {fileID: 1239341056232074, guid: abcb882f6e2dac44486aa2169fb25273, type: 2}
 --- !u!212 &212062442441715294
 SpriteRenderer:
   m_ObjectHideFlags: 1

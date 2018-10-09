@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -136,7 +136,7 @@ public class EnemyController : MonoBehaviour {
     {
         if(collision.transform.tag == "Player")
         {
-            //REPLACE WITH WHATEVER SCRIPT BEN HAS FOR DAMAGING THE PLAYER
+            target.GetComponent<EverythingPlayer>().getHit(damage);
         }
     }
 

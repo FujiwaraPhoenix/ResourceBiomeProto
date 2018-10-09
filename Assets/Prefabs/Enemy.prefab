@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1391629915527708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.76, y: 2.02, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -26.5, y: 36.2, z: -1}
+  m_LocalScale: {x: 4.4884562, y: 4.4884562, z: 4.4884562}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -102,14 +102,14 @@ MonoBehaviour:
   shot: {fileID: 114543821867366166, guid: 45ae41f3c8805494cbd786bfed8c97f3, type: 2}
   maxHealth: 30
   hostile: 1
-  aggroRange: 5
+  aggroRange: 12
   damage: 5
-  speedMult: 2
+  speedMult: 3
   shooty: 0
   shootCooldown: 2
   shotTimer: 0
   wanderer: 1
-  wanderTimerMax: 4
+  wanderTimerMax: 5
   wanderTimerMin: 0.5
   wanderCooldownMax: 5
   wanderCooldownMin: 1
