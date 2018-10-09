@@ -8,8 +8,9 @@ public class ProjectileController : MonoBehaviour {
     float duration;
     public LayerMask playerLayer;
 
-    double damage;
+    int damage;
     int speed = 6;
+    bool hitSomething = false;
 
     // Use this for initialization
     void Start () {
@@ -25,16 +26,21 @@ public class ProjectileController : MonoBehaviour {
         }
 
         //Determines collision and tells the hit enemies to take damage
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 5, playerLayer);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.5f, playerLayer);
         foreach (Collider2D c in colliders)
         {
             EverythingPlayer player = c.GetComponent<EverythingPlayer>();
             player.getHit(damage);
+            hitSomething = true;
+        }
+        if(hitSomething) //If something was hit, destroy the gameobject
+        {
+            Destroy(gameObject);
         }
     }
 
 
-    public void target (Vector3 destination, double d) //Sets the direction and stats of the projectile
+    public void target (Vector3 destination, int d) //Sets the direction and stats of the projectile
     {
         //See comment on the type variable in TowerController
         damage = d;

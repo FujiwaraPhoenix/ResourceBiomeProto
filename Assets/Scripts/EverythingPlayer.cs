@@ -23,6 +23,9 @@ public class EverythingPlayer : MonoBehaviour {
     public SpriteRenderer energyImage;
     public bool testing = false;
 
+    public Text scoreText; //UI text for score
+    float score = 0;
+
     public float playerSpeed = 4f;
 
     //Variables for food that you've eaten;
@@ -50,6 +53,7 @@ public class EverythingPlayer : MonoBehaviour {
         {
             possibleStatuses[i] = false;
         }
+        scoreText.text = "Score: "+score;
     }
 	
 
@@ -85,6 +89,12 @@ public class EverythingPlayer : MonoBehaviour {
 
         consumeFood();
         activateFoodEffs();
+
+        if (health > 0) //Increment Score
+        {
+            score += Time.deltaTime;
+        }
+        scoreText.text = "Score: " + (int)score;
     }
 
     public void statusDetails()
