@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlantSpeciesGenerator : MonoBehaviour {
     
     public EdiblePlant baseplant;
+    public int listLength = 3;
     //For Jack: Please fill up the generator with plant sprites. Thanks.
     public Sprite[] spriteList = new Sprite[7];
 
@@ -21,6 +22,7 @@ public class PlantSpeciesGenerator : MonoBehaviour {
     //At minimum, one species must recover hunger.
     public void generateSpecies()
     {
+        Controller.Instance.speciesList = new EdiblePlant[listLength];
         for (int i = 0; i < Controller.Instance.speciesList.Length; i++) {
             EdiblePlant e = Instantiate (baseplant, transform.position, Quaternion.identity);
             e.healthHealed = Random.Range(-10, 10);
