@@ -20,7 +20,7 @@ public class BiomeGeneration : MonoBehaviour {
     public float amountOfAsset1;
     public float amountOfAsset2;
     public float amountOfAsset3;
-    public static float amountOfPlants = 10f;
+    float amountOfPlants = 10f;
 
     Vector3 spawnPosition;
 
@@ -76,6 +76,14 @@ public class BiomeGeneration : MonoBehaviour {
                 biome.transform.SetParent(this.transform);
                 biome.transform.localPosition = spawnPosition;
             }
+            for(int i = 0; i < amountOfPlants; i++)
+            {
+                spawnPosition = new Vector3(Random.Range(-0.65f, 0.65f), -1f, Random.Range(-0.65f, 0.65f));
+                EdiblePlant plant = Controller.Instance.speciesList[0];
+                EdiblePlant terrainPlant = (EdiblePlant)Instantiate(plant, transform.position, Quaternion.identity);
+                terrainPlant.transform.SetParent(this.transform);
+                terrainPlant.transform.localPosition = spawnPosition;
+            }
         }
         if (isGrass)
         {
@@ -104,7 +112,14 @@ public class BiomeGeneration : MonoBehaviour {
                 biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
                 biome.transform.SetParent(this.transform);
                 biome.transform.localPosition = spawnPosition;
-
+            }
+            for (int i = 0; i < amountOfPlants; i++)
+            {
+                spawnPosition = new Vector3(Random.Range(-0.65f, 0.65f), -1f, Random.Range(-0.65f, 0.65f));
+                EdiblePlant plant = Controller.Instance.speciesList[1];
+                EdiblePlant terrainPlant = (EdiblePlant)Instantiate(plant, transform.position, Quaternion.identity);
+                terrainPlant.transform.SetParent(this.transform);
+                terrainPlant.transform.localPosition = spawnPosition;
             }
         }
         if (isIce)
@@ -134,7 +149,14 @@ public class BiomeGeneration : MonoBehaviour {
                 biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
                 biome.transform.SetParent(this.transform);
                 biome.transform.localPosition = spawnPosition;
-
+            }
+            for (int i = 0; i < amountOfPlants; i++)
+            {
+                spawnPosition = new Vector3(Random.Range(-0.65f, 0.65f), -1f, Random.Range(-0.65f, 0.65f));
+                EdiblePlant plant = Controller.Instance.speciesList[2];
+                EdiblePlant terrainPlant = (EdiblePlant)Instantiate(plant, transform.position, Quaternion.identity);
+                terrainPlant.transform.SetParent(this.transform);
+                terrainPlant.transform.localPosition = spawnPosition;
             }
         }
     }
