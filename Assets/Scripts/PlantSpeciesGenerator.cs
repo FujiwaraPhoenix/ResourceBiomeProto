@@ -6,6 +6,9 @@ public class PlantSpeciesGenerator : MonoBehaviour {
     
     public EdiblePlant baseplant;
     public int listLength = 3;
+
+    Vector3 plantSpawn;
+
     //For Jack: Please fill up the generator with plant sprites. Thanks.
     public Sprite[] spriteList = new Sprite[7];
 
@@ -24,7 +27,10 @@ public class PlantSpeciesGenerator : MonoBehaviour {
     {
         Controller.Instance.speciesList = new EdiblePlant[listLength];
         for (int i = 0; i < Controller.Instance.speciesList.Length; i++) {
+            plantSpawn = new Vector3(Random.Range(-40f, 40f), Random.Range(-40f, 40f), -1f);
             EdiblePlant e = Instantiate (baseplant, transform.position, Quaternion.identity);
+            e.transform.SetParent(this.transform);
+            e.transform.localPosition = plantSpawn;
             e.healthHealed = Random.Range(-10, 10);
             e.hungerRecovered = Random.Range(-10, 10);
             int randomVal = Random.Range(0, 8);

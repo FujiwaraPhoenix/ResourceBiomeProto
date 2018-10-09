@@ -53,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseplant: {fileID: 114368275436524416, guid: 7c85fcff453047d4b9bad88aa68bf73e,
     type: 2}
+  listLength: 10
   spriteList:
   - {fileID: 0}
   - {fileID: 0}

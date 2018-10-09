@@ -20,8 +20,10 @@ public class BiomeGeneration : MonoBehaviour {
     public float amountOfAsset1;
     public float amountOfAsset2;
     public float amountOfAsset3;
+    public static float amountOfPlants = 10f;
 
     Vector3 spawnPosition;
+
     bool isDesert = false;
     bool isGrass = false;
     bool isIce = false;
@@ -73,7 +75,6 @@ public class BiomeGeneration : MonoBehaviour {
                 biome.transform.localScale = new Vector3(Random.Range(1, 5), Random.Range(1, 5), 1);
                 biome.transform.SetParent(this.transform);
                 biome.transform.localPosition = spawnPosition;
-
             }
         }
         if (isGrass)
