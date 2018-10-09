@@ -30,7 +30,7 @@ public class EverythingPlayer : MonoBehaviour {
     public float[] timeLeft = new float[8];
 
     public float poisonTickTimer;
-    public float consumptionPerAction = 1f;
+    public int consumptionPerAction = 1;
 
     //SET ANY OF THE BOOLS TO TRUE TO ACTIVATE THE EFFECTS
     //ENERGY AND SPEED WORK TOGETHER
