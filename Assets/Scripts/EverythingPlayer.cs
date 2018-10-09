@@ -29,7 +29,8 @@ public class EverythingPlayer : MonoBehaviour {
     public bool[] possibleStatuses = new bool[8];
     public float[] timeLeft = new float[8];
 
-
+    public float poisonTickTimer;
+    public float consumptionPerAction = 1f;
 
     //SET ANY OF THE BOOLS TO TRUE TO ACTIVATE THE EFFECTS
     //ENERGY AND SPEED WORK TOGETHER
@@ -69,6 +70,7 @@ public class EverythingPlayer : MonoBehaviour {
         }
 
         consumeFood();
+        activateFoodEffs();
     }
 
     public void statusDetails()
@@ -156,39 +158,39 @@ public class EverythingPlayer : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            energy = energy - 1;
+            energy -= consumptionPerAction;
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            energy = energy - 1;
+            energy -= consumptionPerAction;
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            energy = energy - 1;
+            energy -= consumptionPerAction;
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            energy = energy - 1;
+            energy -= consumptionPerAction;
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            energy = energy - 1;
+            energy -= consumptionPerAction;
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            energy = energy - 1;
+            energy -= consumptionPerAction;
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            energy = energy - 1;
+            energy -= consumptionPerAction;
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            energy = energy - 1;
+            energy -= consumptionPerAction;
         }
 
         if (energy < playerSpeed)
@@ -275,6 +277,64 @@ public class EverythingPlayer : MonoBehaviour {
                     Destroy(e.gameObject);
                 }
             }
+        }
+    }
+
+    public void activateFoodEffs()
+    {
+        if (possibleStatuses[0])
+        {
+            //Do nothing. It's the nothing happens.
+        }
+        if (possibleStatuses[1])
+        {
+            //Poison procs.
+            if (poisonTickTimer < 0f)
+            {
+                health--;
+                poisonTickTimer = 1f;
+            }
+            poisonTickTimer -= Time.deltaTime;
+        }
+        if (possibleStatuses[2])
+        {
+            //Paralysis lol.
+            playerSpeed = 0f;
+        }
+        else
+        {
+            playerSpeed = 4f;
+        }
+        if (possibleStatuses[3] && !possibleStatuses[4])
+        {
+            //Speed up
+            playerSpeed = 6f;
+        }
+        else if (possibleStatuses[4] && !possibleStatuses[3])
+        {
+            //Speed down
+            playerSpeed = 2f;
+        }
+        else
+        {
+            playerSpeed = 4f;
+        }
+        if (possibleStatuses[5])
+        {
+            //Confused; ideally, this inverts controls.
+        }
+        if (possibleStatuses[6])
+        {
+            //Drunk; spaz the camera out.
+        }
+        if (possibleStatuses[7])
+        {
+            //Hungry; use more energy per tap.
+            consumptionPerAction = 2;
+        }
+        else
+        {
+            consumptionPerAction = 1;
         }
     }
 }
